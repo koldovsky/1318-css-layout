@@ -1,13 +1,10 @@
 .header {
   background-color: var(--accent-color);
 
-  .header__title,
-  .header__logo {
-    font-size: 3.5rem;
-    color: var(--text-color);
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
+  @media (min-width: 768px) {
+    .header__text-line {
+      display: block;
+    }
   }
 
   .header__nav {
@@ -20,6 +17,15 @@
     }
   }
 
+  .header__title,
+  .header__logo {
+    color: var(--text-color);
+    font-size: 3.5rem;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
   .header__menu {
     display: flex;
     flex-direction: column;
@@ -27,19 +33,19 @@
     .menu__item {
       color: var(--text-color);
       text-decoration: none;
-    }
 
-    .menu__item:hover {
-      text-decoration: underline;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
   @media (min-width: 600px) {
     .header__menu {
       flex-direction: row;
+      flex: 1;
       align-items: center;
       justify-content: space-around;
-      flex: 1;
     }
   }
 
@@ -49,13 +55,14 @@
     background-size: cover;
     background-position: center;
     min-height: 500px;
+
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
+    flex-direction: column;
 
-  .header__title {
-    color: var(--accent-color);
+    .header__title {
+      color: var(--accent-color);
+    }
   }
 }
